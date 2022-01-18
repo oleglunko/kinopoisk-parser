@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kinopoisk Top</title>
+</head>
+<body>
+    <label>Введите дату:</label>
+    <form th:action="@{/top}">
+        <input id="date" type="date" th:name="date" th:value="${date}">
+        <button type="submit">Подтвердить</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Позиция</th>
+                <th>Название</th>
+                <th>Год</th>
+                <th>Рейтинг</th>
+                <th>Количество голосов</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${films.size()>0}" th:each="film: ${films}">
+                <td th:text="${film.position}" />
+                <td th:text="${film.originalName}" />
+                <td th:text="${film.releaseYear}" />
+                <td th:text="${film.rating}" />
+                <td th:text="${film.votesCount}" />
+            </tr>
+            <tr th:if="${films.size()==0}">
+                <td colspan="5">Рейтинг на заданную дату отсутствует</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
