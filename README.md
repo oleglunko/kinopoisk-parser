@@ -1,6 +1,6 @@
 # Kinopoisk Parser
 
-## Spring Boot, Hibernate, H2, Tomcat, Maven, Thymeleaf
+## Spring Boot, Hibernate, H2, Jsoup, Tomcat, Maven, Thymeleaf
 
 ### Описание проекта
 Приложение собирает данные с рейтинга Кинопоиска (http://www.kinopoisk.ru/top/), сохраняя информацию о фильмах (позиция, рейтинг, оригинальное название, год и количество голосов). Сбор данных настроен через cron и выполняется ежедневно в 12:00.
